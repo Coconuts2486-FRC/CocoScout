@@ -19,9 +19,19 @@ namespace CocoScout
     /// </summary>
     public partial class AddDataWindow : Window
     {
+        TeamStats TeamStats;
+
         public AddDataWindow()
         {
+            TeamStats = new TeamStats();
             InitializeComponent();
+            this.DataContext = TeamStats;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(TeamStats.AutoScore);
         }
     }
 }

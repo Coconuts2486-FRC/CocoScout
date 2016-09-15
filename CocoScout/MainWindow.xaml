@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <local:UserControl1 Grid.Row="0" Grid.ColumnSpan="2"/>
+        <local:TeamUserControl Grid.Row="0" Grid.ColumnSpan="2"/>
         <Button Content="New Team" Grid.Row="1" Grid.Column="1" Click="Button_Click"/>
     </Grid>
 </Window>

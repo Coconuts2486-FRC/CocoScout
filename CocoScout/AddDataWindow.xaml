@@ -8,7 +8,27 @@
         Title="AddDataWindow" Height="300" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid ShowGridLines="False"/>
+        <Label Content="Team #" Grid.Column="0" Height="30"/>
+        <TextBox Grid.Column="1" Margin="5" Width="200" Height="20" Text="{Binding TeamNumber}"/>
+        <Label Content="Match #" Grid.Column="0" Height="30" Grid.Row="1"/>
+        <TextBox Grid.Column="1" Margin="5" Width="200" Height="20" Grid.Row="1" Text="{Binding MatchNumber}"/>
+        <Label Content="Auto Score" Grid.Column="0" Height="30" Grid.Row="2"/>
+        <TextBox Grid.Column="1" Margin="5" Width="200" Height="20" Grid.Row="2" Text="{Binding AutoScore}"/>
+        <Label Content="TeleOp Score" Grid.Column="0" Grid.Row="3"/>
+        <TextBox Grid.Column="1" Margin="5" Width="200" Height="20" Grid.Row="3" Text="{Binding TeleOpScore}"/>
+        <DockPanel Grid.Row="4">
+            <Button Content="Save" Click="Button_Click"/>
+        </DockPanel>
     </Grid>
 </Window>
