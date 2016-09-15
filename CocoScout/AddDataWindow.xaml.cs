@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CocoScout
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddDataWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddDataWindow : Window
     {
-        public MainWindow()
+        public AddDataWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddDataWindow window2 = new AddDataWindow();
-            window2.Show();
         }
     }
 }
