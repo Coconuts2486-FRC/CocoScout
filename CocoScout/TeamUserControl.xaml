@@ -9,7 +9,7 @@
     <DockPanel>
         <Label Content="Filter:" DockPanel.Dock="Top"/>
         <TextBox DockPanel.Dock="Top" Margin="0,0,0,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" />
-        <ListView Name="lvUsers">
+        <ListView Name="TeamView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Team #" Width="60" DisplayMemberBinding="{Binding TeamNumber}" />

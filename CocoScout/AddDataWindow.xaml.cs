@@ -32,6 +32,13 @@ namespace CocoScout
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine(TeamStats.AutoScore);
+            Console.WriteLine(TeamStats.TeleOpScore);
+            Console.WriteLine(TeamStats.MatchNumber);
+            Console.WriteLine(TeamStats.TeamNumber);
+            TeamUserControl.items.Add(TeamStats);
+
+            TeamUserControl teamUserControl = new TeamUserControl();
+            this.Close();
         }
     }
 }

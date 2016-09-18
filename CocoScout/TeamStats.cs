@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CocoScout
 {
-    class TeamStats
+    public class TeamStats
     {
         public int TeamNumber { get; set; }
 
