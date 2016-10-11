@@ -16,6 +16,16 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <local:TeamUserControl Grid.Row="0" Grid.ColumnSpan="2"/>
-        <Button Content="New Team" Grid.Row="1" Grid.Column="1" Click="Button_Click"/>
+        <DockPanel Grid.Row="1" Grid.Column="0" >
+        <Button Content="Upload" Margin="0 0 5 0" Width="45" Click="Upload_Click"/>
+        <Button Content="Download" Margin="0 0 5 0" Width="62" Click="Download_Click"/>
+        <Button Content="Save As" Margin="0 0 5 0" Width="50" Click="SaveAs_Click"/>
+        <Button Content="Save" Margin="0 0 5 0" Width="40" Click="Save_Click"/>
+        <Button Content="Load " Margin="0 0 5 0" Width="40" Click="Load_Click"/>
+        <Button Content="Delete" Width="45" Click="Button_Click_1"/>
+        </DockPanel>
+        <Button Content="New Team" Grid.Row="1" Grid.Column="1" Width="65" Click="Button_Click"/>
+            
+        
     </Grid>
 </Window>

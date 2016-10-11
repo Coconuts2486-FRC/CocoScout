@@ -5,17 +5,103 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CocoScout"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="10000">
     <DockPanel>
         <Label Content="Filter:" DockPanel.Dock="Top"/>
         <TextBox DockPanel.Dock="Top" Margin="0,0,0,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" />
-        <ListView Name="TeamView">
+        <ListView Name="TeamView" SelectionChanged="TeamView_SelectionChanged">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                </Style>
+            </ListView.Resources>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Team #" Width="60" DisplayMemberBinding="{Binding TeamNumber}" />
-                    <GridViewColumn Header="Match #" Width="60" DisplayMemberBinding="{Binding MatchNumber}" />
-                    <GridViewColumn Header="TeleOp Score" Width="80" DisplayMemberBinding="{Binding TeleOpScore}" />
-                    <GridViewColumn Header="Auto Score" Width="70" DisplayMemberBinding="{Binding AutoScore}" />
+                    <GridViewColumn Width="60" DisplayMemberBinding="{Binding TeamNumber}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Team #</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="65" DisplayMemberBinding="{Binding MatchNumber}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="MatchNumber" Click="GridViewColumnHeader_Click"   >Match #</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding TeleOpScore}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeleOpScore" Click="GridViewColumnHeader_Click"   >TeleOp Score</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="70" DisplayMemberBinding="{Binding AutoScore}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click"   >Auto Score</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding HighGoalAuto}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">High Goal Auto</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding HighGoalTeleHit}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">High Goal TeleOp %</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding LowGoalAuto}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Low Goal Auto</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding LowGoalTele}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Low Goal TeleOp</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="50" DisplayMemberBinding="{Binding LowBar}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Low Bar</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="75" DisplayMemberBinding="{Binding LowBarAuto}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Low Bar Auto</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding ChevaldeFrise}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Cheval de Frise</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding ChevaldeFriseAuto}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Cheval de Frise Auto</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="40" DisplayMemberBinding="{Binding Moat}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Moat</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="60" DisplayMemberBinding="{Binding Ramparts}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Ramparts</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding RampartsAuto}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Ramparts Auto</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="70" DisplayMemberBinding="{Binding Drawbridge}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Drawbridge</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding DrawbridgeAuto}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Drawbridge Auto</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
 

@@ -36,9 +36,12 @@ namespace CocoScout
             Console.WriteLine(TeamStats.MatchNumber);
             Console.WriteLine(TeamStats.TeamNumber);
             TeamUserControl.items.Add(TeamStats);
-
-            TeamUserControl teamUserControl = new TeamUserControl();
             this.Close();
+        }
+
+        private void TextUpdated(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
