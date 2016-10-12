@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CocoScout"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="10000">
+             d:DesignHeight="300" d:DesignWidth="1500">
     <DockPanel>
         <Label Content="Filter:" DockPanel.Dock="Top"/>
         <TextBox DockPanel.Dock="Top" Margin="0,0,0,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" />
@@ -42,7 +42,7 @@
                             <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">High Goal Auto</GridViewColumnHeader>
                         </GridViewColumn.Header>
                     </GridViewColumn>
-                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding HighGoalTeleHit}" >
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding HighGoalTelePercent}" >
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">High Goal TeleOp %</GridViewColumnHeader>
                         </GridViewColumn.Header>
@@ -100,6 +100,16 @@
                     <GridViewColumn Width="100" DisplayMemberBinding="{Binding DrawbridgeAuto}" >
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Drawbridge Auto</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="70" DisplayMemberBinding="{Binding ChallengedCheck}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Challenged</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="50" DisplayMemberBinding="{Binding ScaledCheck}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TeamNumber" Click="GridViewColumnHeader_Click">Scaled</GridViewColumnHeader>
                         </GridViewColumn.Header>
                     </GridViewColumn>
                 </GridView>

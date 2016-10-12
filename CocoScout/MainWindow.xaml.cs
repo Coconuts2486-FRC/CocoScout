@@ -98,8 +98,7 @@ namespace CocoScout
                             {
                                 TeamNumber = (int)document["TeamNumber"],
                                 MatchNumber = (int)document["MatchNumber"],
-                                AutoScore = (int)document["AutoScore"],
-                                TeleOpScore = (int)document["TeleOpScore"]
+                                
                             };
 
                             TeamUserControl.items.Add(team);

@@ -12,9 +12,28 @@ namespace CocoScout
 
         public int MatchNumber { get; set; }
 
-        public int TeleOpScore { get; set; }
+        public int TeleOpScore { get
+            {
+                int score = LowBar * 5 + ChevaldeFrise * 5 + Moat * 5 + Ramparts * 5 + Drawbridge * 5 +
+                    SallyPort * 5 + RockWall * 5 + RoughTerrain * 5 + LowGoalTele * 2 + HighGoalTeleHit * 5;
+                if (ScaledCheck == true)
+                {
+                    score += 15;
+                }
+                else if (ChallengedCheck == true) 
+                {
+                    score += 5;
+                }
+                return score;
+            }
+        }
 
-        public int AutoScore { get; set; }
+        public int AutoScore { get
+            {
+                return LowBarAuto *10 + ChevaldeFriseAuto * 10 + MoatAuto * 10 + RampartsAuto * 10 + DrawbridgeAuto * 10 +
+                    SallyPortAuto * 10 + RockWallAuto * 10 + RoughTerrainAuto * 10 + LowGoalAuto * 5 + HighGoalAuto * 10;
+            }
+        }
 
         public int LowGoalAuto { get; set; }
 
@@ -26,7 +45,20 @@ namespace CocoScout
 
         public int HighGoalTeleHit { get; set; }
 
-        public int HighGoalPercent { get; set; }
+        public double HighGoalTelePercent { get
+            {
+                int total = HighGoalTeleFail + HighGoalTeleHit;
+                if (total > 0)
+                {
+                    double percent = (double)HighGoalTeleHit / (double)total;
+                    return Math.Round(percent * 100, 1);
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+        }
 
         public int LowBar { get; set; }
 
@@ -59,5 +91,9 @@ namespace CocoScout
         public int RockWallAuto { get; set; }
 
         public int RoughTerrainAuto { get; set; }
+
+        public bool ChallengedCheck { get; set; }
+
+        public bool ScaledCheck { get; set; }
     }
 }

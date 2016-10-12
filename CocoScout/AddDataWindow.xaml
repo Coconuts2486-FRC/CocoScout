@@ -30,6 +30,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid ShowGridLines="False"/>
         <Label Content="Team #" Grid.Column="0" Height="30"/>
@@ -38,11 +39,11 @@
         <Label Content="Match #" Grid.Column="0" Height="30" Grid.Row="1"/>
         <TextBox Grid.Column="1" Margin="5" Width="50" Height="20" Grid.Row="1" HorizontalAlignment="Left" Text="{Binding MatchNumber}"/>
         
-        <Label Content="Auto Score" Grid.Column="0" Height="30" Grid.Row="2"/>
+        <!--<Label Content="Auto Score" Grid.Column="0" Height="30" Grid.Row="2"/>
         <TextBox Grid.Column="1" Margin="5" Width="50" Height="20" Grid.Row="2" HorizontalAlignment="Left" Text="{Binding AutoScore}"/>
         
         <Label Content="TeleOp Score" Grid.Column="0" Grid.Row="3"/>
-        <TextBox Grid.Column="1" Margin="5" Width="50" Height="20" Grid.Row="3" HorizontalAlignment="Left" Text="{Binding TeleOpScore}"/>
+        <TextBox Grid.Column="1" Margin="5" Width="50" Height="20" Grid.Row="3" HorizontalAlignment="Left" Text="{Binding TeleOpScore}"/>-->
         
         <Label Content="High Goal TeleOp Fail" Grid.Column="0" Height="30" Grid.Row="4"/>
         <TextBox Grid.Column="1" Margin="5" Width="50" Height="20" Grid.Row="4" HorizontalAlignment="Left" Text="{Binding HighGoalTeleFail}"/>
@@ -107,7 +108,11 @@
         <Label Content="Rough Terrain" Grid.Column="2" Height="30" Grid.Row="14"/>
         <TextBox Grid.Column="3" Margin="5" Width="50" Height="20" Grid.Row="14" HorizontalAlignment="Left" Text="{Binding RoughTerrainAuto}"/>
 
-        <DockPanel Grid.Row="15">
+        <CheckBox Grid.Row="15" Content="Challenged" IsChecked="{Binding ChallengedCheck}"/>
+
+        <CheckBox Grid.Row="15" Grid.Column="1" Content="Scaled" IsChecked="{Binding ScaledCheck}"/>
+
+        <DockPanel Grid.Row="16">
             <Button Content="Save" Click="Button_Click"/>
         </DockPanel>
     </Grid>

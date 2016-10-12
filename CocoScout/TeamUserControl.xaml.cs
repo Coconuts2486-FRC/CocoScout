@@ -28,11 +28,11 @@ namespace CocoScout
             InitializeComponent();
             items = new ObservableCollection<TeamStats>();
 #if DEBUG
-            items.Add(new TeamStats() { TeamNumber = 2486, MatchNumber = 15, AutoScore = 250, TeleOpScore = 250, });
-            items.Add(new TeamStats() { TeamNumber = 2486, MatchNumber = 10, AutoScore = 200, TeleOpScore = 20, });
-            items.Add(new TeamStats() { TeamNumber = 2, MatchNumber = 10, AutoScore = 25, TeleOpScore = 2, });
-            items.Add(new TeamStats() { TeamNumber = 50, MatchNumber = 1, AutoScore = 50, TeleOpScore = 5, });
-            items.Add(new TeamStats() { TeamNumber = 500, MatchNumber = 13, AutoScore = 60, TeleOpScore = 75, });
+            items.Add(new TeamStats() { TeamNumber = 2486, MatchNumber = 15});
+            items.Add(new TeamStats() { TeamNumber = 2486, MatchNumber = 10});
+            items.Add(new TeamStats() { TeamNumber = 2, MatchNumber = 10});
+            items.Add(new TeamStats() { TeamNumber = 50, MatchNumber = 1});
+            items.Add(new TeamStats() { TeamNumber = 500, MatchNumber = 13});
 #endif
             TeamView.ItemsSource = items;
             TeamView.Items.Refresh();
