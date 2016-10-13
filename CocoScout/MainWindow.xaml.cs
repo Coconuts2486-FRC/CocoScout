@@ -107,30 +107,31 @@ namespace CocoScout
                 foreach (TeamStats stats in TeamUserControl.items)
                 {
                     Document doc = new Document();
-
-                    doc["TeamNumber"] = stats.TeamNumber;
-                    doc["MatchNumber"] = stats.MatchNumber;
-                    doc["LowGoalAuto"] = stats.TeleOpScore;
-                    doc["HighGoalAuto"] = stats.TeleOpScore;
-                    doc["LowGoalTele"] = stats.TeleOpScore;
-                    doc["HighGoalTeleFail"] = stats.TeleOpScore;
-                    doc["HighGoalTeleHit"] = stats.TeleOpScore;
-                    doc["LowBar"] = stats.TeleOpScore;
-                    doc["ChevaldeFrise"] = stats.TeleOpScore;
-                    doc["Moat"] = stats.TeleOpScore;
-                    doc["Ramparts"] = stats.TeleOpScore;
-                    doc["Drawbridge"] = stats.TeleOpScore;
-                    doc["SallyPort"] = stats.TeleOpScore;
-                    doc["RockWall"] = stats.TeleOpScore;
-                    doc["RoughTerrain"] = stats.TeleOpScore;
-                    doc["LowBarAuto"] = stats.TeleOpScore;
-                    doc["ChevaldeFriseAuto"] = stats.TeleOpScore;
-                    doc["MoatAuto"] = stats.TeleOpScore;
-                    doc["RampartsAuto"] = stats.TeleOpScore;
-                    doc["DrawbridgeAuto"] = stats.TeleOpScore;
-                    doc["SallyPortAuto"] = stats.TeleOpScore;
-                    doc["RockWallAuto"] = stats.TeleOpScore;
-                    doc["RoughTerrainAuto"] = stats.TeleOpScore;
+                                doc["TeamNumber"] = stats.TeamNumber;
+                                doc["MatchNumber"] = stats.MatchNumber;
+                                doc["LowGoalAuto"] = stats.LowGoalAuto;
+                                doc["HighGoalAuto"] = stats.HighGoalAuto;
+                                doc["LowGoalTele"] = stats.LowGoalTele;
+                                doc["HighGoalTeleFail"] = stats.HighGoalTeleFail;
+                                doc["HighGoalTeleHit"] = stats.HighGoalTeleHit;
+                                doc["LowBar"] = stats.LowBar;
+                                doc["ChevaldeFrise"] = stats.ChevaldeFrise;
+                                doc["Moat"] = stats.Moat;
+                                doc["Ramparts"] = stats.Ramparts;
+                                doc["Drawbridge"] = stats.Drawbridge;
+                                doc["SallyPort"] = stats.SallyPort;
+                                doc["RockWall"] = stats.RockWall;
+                                doc["RoughTerrain"] = stats.RoughTerrain;
+                                doc["LowBarAuto"] = stats.LowBarAuto;
+                                doc["ChevaldeFriseAuto"] = stats.ChevaldeFriseAuto;
+                                doc["MoatAuto"] = stats.MoatAuto;
+                                doc["RampartsAuto"] = stats.RampartsAuto;
+                                doc["DrawbridgeAuto"] = stats.DrawbridgeAuto;
+                                doc["SallyPortAuto"] = stats.SallyPortAuto;
+                                doc["RockWallAuto"] = stats.RockWallAuto;
+                                doc["RoughTerrainAuto"] = stats.RoughTerrainAuto;
+                                doc["ChallengedCheck"] = stats.ChallengedCheck;
+                                doc["ScaledCheck"] = stats.ScaledCheck;
 
                     table.PutItem(doc);
                 }
@@ -160,7 +161,6 @@ namespace CocoScout
                         {
                             TeamStats team = new TeamStats()
                             {
-                                TeamNumber = (int)document["TeamNumber"],
                                 MatchNumber = (int)document["MatchNumber"],
                                 LowGoalAuto = (int)document["LowGoalAuto"],
                                 HighGoalAuto = (int)document["HighGoalAuto"],
@@ -183,6 +183,8 @@ namespace CocoScout
                                 SallyPortAuto = (int)document["SallyPortAuto"],
                                 RockWallAuto = (int)document["RockWallAuto"],
                                 RoughTerrainAuto = (int)document["RoughTerrainAuto"],
+                                ScaledCheck = (bool)document["ScaledCheck"],
+                                ChallengedCheck = (bool)document["ChallengedCheck"],
 
 
                             };
