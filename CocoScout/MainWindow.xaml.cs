@@ -25,60 +25,60 @@ namespace CocoScout
     /// </summary>
     public partial class MainWindow : Window
     {
-        public enum List
-        {
-            A,
-            B
-        }
+        //public enum List
+        //{
+        //    A,
+        //    B
+        //}
 
         public MainWindow()
         {
-            GetKey();
+            //GetKey();
             InitializeComponent();
         }
 
-        List<string> listA = new List<string>();
-        List<string> listB = new List<string>();
-        public void GetKey()
-        {
-            string docpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var reader = new StreamReader(File.OpenRead(docpath + @"\credentials.csv"));
+        //List<string> listA = new List<string>();
+        //List<string> listB = new List<string>();
+        //public void GetKey()
+        //{
+        //    string docpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        //    var reader = new StreamReader(File.OpenRead(docpath + @"\credentials.csv"));
 
-            List l = List.A;
-            while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-                var values = line.Split(',');
+        //    List l = List.A;
+        //    while (!reader.EndOfStream)
+        //    {
+        //        var line = reader.ReadLine();
+        //        var values = line.Split(',');
 
-                if (l == List.A)
-                {
-                    foreach (var x in values)
-                    {
-                        listA.Add(x);
-                    }
-                }
-                else
-                {
-                    foreach (var x in values)
-                    {
-                        listB.Add(x);
-                    }
-                }
+        //        if (l == List.A)
+        //        {
+        //            foreach (var x in values)
+        //            {
+        //                listA.Add(x);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            foreach (var x in values)
+        //            {
+        //                listB.Add(x);
+        //            }
+        //        }
 
-                if (l == List.A)
-                    l = List.B;
-            }
-            Console.WriteLine("A");
-            foreach (string i in listA)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine("B");
-            foreach (string i in listB)
-            {
-                Console.WriteLine(i);
-            }
-        }
+        //        if (l == List.A)
+        //            l = List.B;
+        //    }
+        //    Console.WriteLine("A");
+        //    foreach (string i in listA)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //    Console.WriteLine("B");
+        //    foreach (string i in listB)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
