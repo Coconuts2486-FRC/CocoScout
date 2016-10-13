@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocoScout", "CocoScout\CocoScout.csproj", "{1FF9EBB3-D44F-44E7-8010-6CAE0B6E9EDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugSpace", "DebugSpace\DebugSpace.csproj", "{2BB29731-98F5-4B73-888C-F3206D135394}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1FF9EBB3-D44F-44E7-8010-6CAE0B6E9EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FF9EBB3-D44F-44E7-8010-6CAE0B6E9EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FF9EBB3-D44F-44E7-8010-6CAE0B6E9EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB29731-98F5-4B73-888C-F3206D135394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB29731-98F5-4B73-888C-F3206D135394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB29731-98F5-4B73-888C-F3206D135394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB29731-98F5-4B73-888C-F3206D135394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

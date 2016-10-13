@@ -25,14 +25,59 @@ namespace CocoScout
     /// </summary>
     public partial class MainWindow : Window
     {
+        public enum List
+        {
+            A,
+            B
+        }
+
         public MainWindow()
         {
+            GetKey();
             InitializeComponent();
-            //string dir = @"%USERPROFILE%\.aws";
-            //bool exists = Directory.Exists(dir);
-            //if (exists)
-            //    Directory.CreateDirectory(dir);
-            //File.Copy("credentials.csv", @"%USERPROFILE%\.aws\");
+        }
+
+        List<string> listA = new List<string>();
+        List<string> listB = new List<string>();
+        public void GetKey()
+        {
+            string docpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var reader = new StreamReader(File.OpenRead(docpath + @"\credentials.csv"));
+
+            List l = List.A;
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+
+                if (l == List.A)
+                {
+                    foreach (var x in values)
+                    {
+                        listA.Add(x);
+                    }
+                }
+                else
+                {
+                    foreach (var x in values)
+                    {
+                        listB.Add(x);
+                    }
+                }
+
+                if (l == List.A)
+                    l = List.B;
+            }
+            Console.WriteLine("A");
+            foreach (string i in listA)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("B");
+            foreach (string i in listB)
+            {
+                Console.WriteLine(i);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -65,8 +110,27 @@ namespace CocoScout
 
                     doc["TeamNumber"] = stats.TeamNumber;
                     doc["MatchNumber"] = stats.MatchNumber;
-                    doc["AutoScore"] = stats.AutoScore;
-                    doc["TeleOpScore"] = stats.TeleOpScore;
+                    doc["LowGoalAuto"] = stats.TeleOpScore;
+                    doc["HighGoalAuto"] = stats.TeleOpScore;
+                    doc["LowGoalTele"] = stats.TeleOpScore;
+                    doc["HighGoalTeleFail"] = stats.TeleOpScore;
+                    doc["HighGoalTeleHit"] = stats.TeleOpScore;
+                    doc["LowBar"] = stats.TeleOpScore;
+                    doc["ChevaldeFrise"] = stats.TeleOpScore;
+                    doc["Moat"] = stats.TeleOpScore;
+                    doc["Ramparts"] = stats.TeleOpScore;
+                    doc["Drawbridge"] = stats.TeleOpScore;
+                    doc["SallyPort"] = stats.TeleOpScore;
+                    doc["RockWall"] = stats.TeleOpScore;
+                    doc["RoughTerrain"] = stats.TeleOpScore;
+                    doc["LowBarAuto"] = stats.TeleOpScore;
+                    doc["ChevaldeFriseAuto"] = stats.TeleOpScore;
+                    doc["MoatAuto"] = stats.TeleOpScore;
+                    doc["RampartsAuto"] = stats.TeleOpScore;
+                    doc["DrawbridgeAuto"] = stats.TeleOpScore;
+                    doc["SallyPortAuto"] = stats.TeleOpScore;
+                    doc["RockWallAuto"] = stats.TeleOpScore;
+                    doc["RoughTerrainAuto"] = stats.TeleOpScore;
 
                     table.PutItem(doc);
                 }
@@ -98,7 +162,29 @@ namespace CocoScout
                             {
                                 TeamNumber = (int)document["TeamNumber"],
                                 MatchNumber = (int)document["MatchNumber"],
-                                
+                                LowGoalAuto = (int)document["LowGoalAuto"],
+                                HighGoalAuto = (int)document["HighGoalAuto"],
+                                LowGoalTele = (int)document["LowGoalTele"],
+                                HighGoalTeleFail = (int)document["HighGoalTeleFail"],
+                                HighGoalTeleHit = (int)document["HighGoalTeleHit"],
+                                LowBar = (int)document["LowBar"],
+                                ChevaldeFrise = (int)document["ChevaldeFrise"],
+                                Moat = (int)document["Moat"],
+                                Ramparts = (int)document["Ramparts"],
+                                Drawbridge = (int)document["Drawbridge"],
+                                SallyPort = (int)document["SallyPort"],
+                                RockWall = (int)document["RockWall"],
+                                RoughTerrain = (int)document["RoughTerrain"],
+                                LowBarAuto = (int)document["LowBarAuto"],
+                                ChevaldeFriseAuto = (int)document["ChevaldeFriseAuto"],
+                                MoatAuto = (int)document["MoatAuto"],
+                                RampartsAuto = (int)document["RampartsAuto"],
+                                DrawbridgeAuto = (int)document["DrawbridgeAuto"],
+                                SallyPortAuto = (int)document["SallyPortAuto"],
+                                RockWallAuto = (int)document["RockWallAuto"],
+                                RoughTerrainAuto = (int)document["RoughTerrainAuto"],
+
+
                             };
 
                             TeamUserControl.items.Add(team);
